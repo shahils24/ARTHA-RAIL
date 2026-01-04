@@ -28,16 +28,10 @@ def get_ai_decision(status_data):
     """
 
     try:
-        # Gemini 3.0 allows us to set the 'thinking_level'
-        # 'LOW' is best for speed in simple demos like this
+        # Generate content using Gemini 3.0 Flash
         response = client.models.generate_content(
             model=model_id,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                thinking_config=types.ThinkingConfig(
-                    thinking_level=types.ThinkingLevel.LOW 
-                )
-            )
+            contents=prompt
         )
         
         return response.text.strip()

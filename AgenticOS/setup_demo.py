@@ -59,10 +59,10 @@ def send_tx(func_call, value_wei=0):
 def run_setup():
     print(f"🚀 Starting Governance Setup for: {contract_address}")
 
-    # A. Configure the Agent (Limit: 0.05 ETH, Cooldown: 0)
+    # A. Configure the Agent (Limit: 0.05 ETH, Cooldown: 60s)
     print("\n🤖 Configuring Agent Permissions...")
     daily_limit = w3.to_wei(0.05, 'ether')
-    receipt = send_tx(contract.functions.configureAgent(agent_address, "AI-Agent-01", daily_limit, 0))
+    receipt = send_tx(contract.functions.configureAgent(agent_address, "AI-Agent-01", daily_limit, 60))
     print(f"✅ Agent Authorized (Status: {receipt['status']})")
 
     # B. Whitelist the Merchant

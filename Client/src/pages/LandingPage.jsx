@@ -16,14 +16,12 @@ export default function LandingPage({ onConnect }) {
 
           {/* HERO */}
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              Controlled AI Payments for the{" "}
-              <span className="text-purple-400">Web3 Era</span>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-sky-400">
+              Artha Rail
             </h1>
 
             <p className="mt-4 text-gray-300 text-lg max-w-3xl mx-auto">
-              Empower AI agents to transact autonomously with programmable
-              spending limits, human approvals, and smart-contract enforcement.
+              The Autonomous Governance Layer for AI Commerce
             </p>
 
             {/* ✅ ONLY NAVIGATION */}

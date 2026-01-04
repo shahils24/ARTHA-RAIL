@@ -38,6 +38,7 @@ contract AgenticCommerceOS_Master {
     // Events for Auditability & Website Frontend
     event AgentConfigured(address indexed agent, string name, uint256 limit);
     event MerchantAuthorized(address indexed merchant, string label);
+    event AgentRun(address indexed agent, address indexed merchant, uint256 amount, string purpose);
     event PurchaseReceipt(address indexed agent, address indexed merchant, uint256 amount, string purpose);
     event SystemStatus(string message, bool paused);
 
@@ -109,6 +110,8 @@ contract AgenticCommerceOS_Master {
         (bool success, ) = _merchant.call{value: _amount}("");
         if (!success) revert TransferFailed();
 
+        // Emit both AgentRun (for agent execution tracking) and PurchaseReceipt (for historical records)
+        emit AgentRun(msg.sender, _merchant, _amount, _purpose);
         emit PurchaseReceipt(msg.sender, _merchant, _amount, _purpose);
     }
 

@@ -54,7 +54,7 @@ class BlockchainBody:
             # Sign the transaction
             signed_tx = self.w3.eth.account.sign_transaction(tx_build, self.agent_private_key)
             
-            # 🚀 THE CRITICAL FIX: Changed .rawTransaction -> .raw_transaction
+            # Changed .rawTransaction -> .raw_transaction
             tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
             
             print(f"⏳ Transaction Sent! Hash: {tx_hash.hex()}")
@@ -62,8 +62,8 @@ class BlockchainBody:
             # Wait for confirmation
             receipt = self.w3.eth.wait_for_transaction_receipt(tx_hash)
             
-            # Use snake_case for receipt attributes too
-            return receipt.transaction_hash.hex()
+            # 🚀 THE UPDATE: Access transaction hash via dict key or correct attribute name
+            return receipt['transactionHash'].hex()
 
         except Exception as e:
             print(f"❌ Blockchain Body Error: {e}")

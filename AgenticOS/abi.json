@@ -98,6 +98,37 @@
 			{
 				"indexed": true,
 				"internalType": "address",
+				"name": "agent",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "merchant",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "purpose",
+				"type": "string"
+			}
+		],
+		"name": "AgentRun",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
 				"name": "merchant",
 				"type": "address"
 			},
