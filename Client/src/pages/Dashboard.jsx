@@ -257,7 +257,7 @@ const AgenticDashboard = ({ walletAddress, web3 }) => {
 
     try {
       await contract.methods
-        .configureAgent(AGENT_ADDRESS, "AI-Agent", web3.utils.toWei(newLimit, "ether"), 60)
+        .configureAgent(AGENT_ADDRESS, "AI-Agent", web3.utils.toWei(newLimit, "ether"), 30)
         .send({ from: walletAddress });
       
       setNewLimit("");
