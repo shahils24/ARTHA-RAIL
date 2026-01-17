@@ -20,13 +20,21 @@ function App() {
       {currentPage === "connect" && (
         <ConnectWallet
           onBack={() => setCurrentPage("landing")}
-          onWalletConnected={(address) => {
+          onWalletConnected={async (address) => {
             setWalletAddress(address);
 
-            getWeb3().then((web3Instance) => {
-              setWeb3(web3Instance);
-              setCurrentPage("dashboard");
-            });
+            try {
+              const web3Instance = await getWeb3();
+              if (web3Instance) {
+                setWeb3(web3Instance);
+                setCurrentPage("dashboard");
+              } else {
+                alert("Failed to initialize Web3. Please try again.");
+              }
+            } catch (error) {
+              console.error("Web3 initialization failed:", error);
+              alert("Failed to connect to MetaMask. Please try again.");
+            }
           }}
         />
       )}
