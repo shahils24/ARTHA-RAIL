@@ -17,8 +17,8 @@ import AgentABI from "../contracts/AgentABI.json";
 
 /* ---------------- CONFIG ---------------- */
 // Make sure this is your NEW contract address
-const CONTRACT_ADDRESS = "0xA2a438cA74A1F271D2Dc5158b7C6c1177403B43e"; 
-const AGENT_ADDRESS = "0xdfb6fEd8Fc66614D19D21Bd6d720a7f39Ef32501";
+const CONTRACT_ADDRESS = "0xCA4D6874A52985D792d8BA2DD0BDcAeF0567537B"; 
+const AGENT_ADDRESS = "0x12f01370BF12e9BFb456FA0Bd7D1B785B08bB40D";
 const SEPOLIA_EXPLORER = "https://sepolia.etherscan.io/tx/";
 
 /* ---------------- COMPONENT ---------------- */
